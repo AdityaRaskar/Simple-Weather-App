@@ -1,0 +1,82 @@
+body{
+  padding: 0;
+  margin: 0;
+  background-color: #04c0c0;
+  margin: auto;
+}
+
+
+.box{
+ margin: auto; 
+ height: 70vh;
+ width: 30vw;
+ background-color: white;
+ border-radius: 5px;
+ margin-top: 10vh;
+ padding: 10px 0;
+ box-shadow: 0 0 25px rgb(89, 87, 87);
+  height: auto;
+}
+
+
+.search {
+  margin: 10px auto 20px auto; /* Adjust the margin-top value as needed */
+  display: flex;
+  align-items: center;
+  background-color: rgb(174, 222, 234);
+  padding: 5px;
+  width: 85%;
+  /* gap: 10px; */
+  gap: -30px;
+  border-radius: 10px;  
+}
+
+.search-input{
+background-color: rgb(174, 222, 234);
+flex-basis: 100%;  
+font-size: x-large;
+border: 0;
+  height: 35px;
+  width: 80%;
+  border-radius: 10px;
+  /* width: auto; */
+}
+
+
+.search-btn{
+  flex-basis: 20%;
+  font-size: x-large;
+  margin-right: 0;
+  right: 0;
+  border-radius: 20%;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  background-color: rgb(174, 222, 234);
+  cursor: pointer;
+
+}
+
+
+.output {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 10px;
+}
+
+
+.title{
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
+
+.foot{
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
