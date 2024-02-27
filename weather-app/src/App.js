@@ -7,20 +7,45 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function App() {
   let [city, setcity] = useState("")
   let [weatherDetails, setweatherDetails] = useState()
+  // let getData = (event) => {
+  //   fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=20233ce6ed7653e5d77f80f60952f68f&units=metric`)
+  //     .then((res) => res.json())
+  //     .then((result) => {
+  //       console.log(result)
+  //       if(result.cod=='404'){
+  //         setweatherDetails()
+  //       }else{
+  //         setweatherDetails(result)
+  //       }
+  //     })
+  //   event.preventDefault();
+  //   setcity('')
+  // }
+
+
   let getData = (event) => {
+    event.preventDefault();
+    if (!city.trim()) { // Check if city input is blank or contains only whitespace
+      return; // Return early if input is blank
+    }
+  
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=20233ce6ed7653e5d77f80f60952f68f&units=metric`)
       .then((res) => res.json())
       .then((result) => {
         console.log(result)
-        if(result.cod=='404'){
+        if (result.cod === '404') {
           setweatherDetails()
-        }else{
+        } else {
           setweatherDetails(result)
         }
       })
-    event.preventDefault();
-    setcity('')
+      .catch((error) => {
+        console.error('Error fetching weather data:', error);
+      });
+  
+    setcity('');
   }
+  
   return (
     <>
         <h1 className='title'>Simple Weather App</h1>
@@ -33,7 +58,8 @@ function App() {
 
       <div className="output">
 
-        {weatherDetails !== undefined ?
+        {/* {weatherDetails !== undefined ? */}
+        {weatherDetails  ?
           <>
             <h3>{weatherDetails.name} <span>{weatherDetails.sys.country}</span> </h3>
             {/* <h2>{Temp}</h2> */}
